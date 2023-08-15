@@ -28,7 +28,7 @@ public class RolService {
 
   public ResponseEntity<Object> createRol(Rol infoRol) {
     datos = new HashMap<>();
-    Optional<Rol> existeRol = this.repositorioRol.findRolByNombre();
+    Optional<Rol> existeRol = this.repositorioRol.findRolByNombre(infoRol.getNombre());
     if (existeRol.isPresent()) {
       datos.put("error", "Ya existe un rol con ese nombre");
       return new ResponseEntity<Object>(datos, HttpStatus.CONFLICT);

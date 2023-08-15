@@ -10,6 +10,6 @@ import com.usersantiago.backendsecurityvotaciones.models.Rol;
 
 
 public interface RepositorioRol extends MongoRepository<Rol,String> {
-  Optional<Rol> findRolByNombre();
+  Optional<Rol> findRolByNombre(String nombre);
     
 }
